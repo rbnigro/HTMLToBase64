@@ -1,6 +1,8 @@
 <div style="display: flex; justify-content: center; margin-top: 4em;">
-  <input type="file" (change)="onInputChanged($event)">
+  <input type="file" (change)="onChange($event)" />
 </div>
-<button></button>
-<p>Base:64</p>
+<!--
+<button (click)="downloadFile()">Download File</button>
+-->
+<p>Base64: </p>
 <p style="word-wrap: break-word;">{{base64}}</p>

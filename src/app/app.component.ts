@@ -7,11 +7,12 @@ import { Observable, Subscriber } from 'rxjs';
 })
 export class AppComponent {
   title = 'HTMLToBase64';
+  myImage!: Observable<any>;
   base64: any;
 
-  onInputChanged(event:any) {
-    let targetEvent = event.target;
-    let file: File = targetEvent.files[0];
+  onChange($event: Event) {
+    let target = $event.target as HTMLInputElement;
+    let file: File = (target.files as FileList)[0];
     let fileReader: FileReader = new FileReader();
 
     fileReader.onload = (e) => {
